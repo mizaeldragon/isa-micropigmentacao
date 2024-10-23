@@ -1,0 +1,422 @@
+/* CRIANDO AS VARIAVEIS DE CORES  */
+
+:root {
+  --main-color: #ff7ea7;
+  --black: #13131a;
+  --bg: #010103;
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+  font-size: 10px;
+}
+
+/* ESTILIZAÇAO QUE É BOA PARA TODO PROJETO DO ZERO */
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ESTILIZACAO DE RESPONSIVIDADE */
+
+.menu-mobile {
+  display: none; /* Oculte o menu móvel por padrão */
+}
+
+/* Menu normal para telas grandes */
+.navbar {
+  display: flex; /* Exibe o menu de navegação normal */
+}
+
+@media screen and (min-width: 1020px) {
+  .btn-open {
+    display: none;
+  }
+  .navbar {
+    display: flex; /* Exiba o menu de navegação normal em telas maiores */
+  }
+
+  .menu-mobile {
+    display: none; /* Oculte o menu móvel em telas maiores */
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .navbar {
+    display: none; /* Oculte o menu normal em telas menores */
+  }
+
+  .menu-mobile {
+    display: flex; /* Exiba o menu móvel em telas menores */
+  }
+
+  .btn-open {
+    display: block;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  section h3.haga3 {
+    flex-direction: column;
+    font-size: 36px;
+  }
+
+  section p.paragraf {
+    font-weight: 100;
+  }
+
+  section div.row {
+    flex-direction: column;
+  }
+
+  section iframe {
+    width: 370px;
+    height: 370px;
+  }
+
+  section .container-image img {
+    height: 400px;
+  }
+}
+
+.btn-open:hover {
+  transform: scale(120%); /* Gira o ícone no hover */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ESTILIZAÇÃO DO BACKGROUND DO BODY*/
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Para evitar rolagem horizontal */
+}
+
+body {
+  background-color: var(--bg);
+}
+
+/* ESTILIZAÇÃO DAS SECTIONS */
+
+section {
+  padding: 3rem 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* ESTILIZAÇÃO DO HOME */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-bottom: var(--border);
+  background-color: var(--bg);
+}
+
+.header section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* FIM ESTILIZAÇÃO DO HOME */
+
+/* ESTILIZACAO DO MENU MOBILE */
+
+.menu-mobile {
+  background: black;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  width: 70%;
+  font-size: 25px;
+  transition: right 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.menu-mobile.open {
+  right: 0;
+}
+
+.menu-mobile nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.menu-mobile nav a {
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.menu-mobile nav a:hover {
+  color: #ff7ea7;
+  border-bottom: 0.3rem solid var(--main-color);
+}
+
+.menu-mobile .btn-fechar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.btn-open {
+  background: none;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 16px;
+  right: 10px;
+  z-index: 300;
+}
+
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo preto com opacidade */
+  z-index: 100; /* Deve estar abaixo do menu, mas acima do conteúdo */
+  display: none; /* Inicialmente escondido */
+  transition: opacity 0.3s ease-in-out; /* Suaviza a transição da opacidade */
+}
+
+/* Exibe a sobreposição */
+.overlay-menu.show {
+  display: block;
+  opacity: 1;
+}
+
+/* FIM ESTILIZACAO DO MENU MOBILE */
+
+.navbar a {
+  margin: 0 1rem;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.navbar a:hover {
+  color: var(--main-color);
+  border-bottom: 0.2rem solid var(--main-color);
+  padding-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.btn {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+.btn:hover {
+  letter-spacing: 0.1rem;
+  background-color: #db5d87;
+}
+
+.home-container {
+  background: url("./img/bg-micro.webp");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.content {
+  max-width: 60rem;
+}
+
+.content h3 {
+  color: #fff;
+  font-size: 6rem;
+}
+
+.content p {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 1.8;
+  padding: 1rem 0;
+}
+
+.home-container section {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ESTILIZAÇÃO DO SOBRE-NÓS */
+
+.title {
+  font-size: 3rem;
+  color: var(--main-color);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.title span {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.about .row {
+  display: flex;
+  align-items: center;
+  background-color: var(--black);
+  gap: 1.5rem;
+}
+
+.about .row .content {
+  padding: 2rem;
+}
+
+.about .row .content h3 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.about .row .content p {
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 1rem 0;
+  line-height: 1.8;
+}
+
+/* ESTILIZAÇÃO DO MENU */
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.menu .box-container .box {
+  text-align: center;
+  border: var(--border);
+  padding: 5rem;
+  cursor: pointer;
+}
+
+.menu .box-container .box img {
+  height: 10rem;
+}
+
+.menu .box-container .box h3 {
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+.menu .box-container .box .price {
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+}
+
+.menu .box-container .box .price span {
+  font-size: 1.5rem;
+  text-decoration: line-through;
+  font-weight: 100;
+}
+
+.menu .box-container .box:hover {
+  background-color: #fff;
+}
+
+.menu .box-container .box:hover > * {
+  color: var(--bg);
+}
+
+/* ESTILIZAÇÃO DO NOSSO CLIENTE */
+
+.review .box-container .box {
+  border: var(--border);
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.review .box-container .box p {
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 2rem 0;
+  line-height: 1.8;
+  font-weight: lighter;
+}
+
+.review .box-container .box .user {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+}
+
+.review .box-container .box h3 {
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 1.8rem;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer .share {
+  padding: 1rem 0;
+}
+
+.footer .share img {
+  margin: 0.3rem;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.footer .share img:hover {
+  width: 45px;
+  height: 45px;
+}
+
+.insta:hover {
+  background-color: rgb(255, 2, 107);
+}
+
+.whats:hover {
+  background-color: rgb(0, 255, 55);
+}
+
+.face:hover {
+  background-color: rgb(2, 61, 255);
+}
+
+section p.paragraf {
+  font-weight: 300;
+}
