@@ -3,7 +3,7 @@ Esse projeto foi feito para mostrar a interface de serviços de uma micropigment
 
 ISA-MICROPGIMENTACAO 🚀 Finalizado.
 
-LINK DO SITE: https://mizaeldragon.github.io/coffe/
+LINK DO SITE: https://mizaeldragon.github.io/isa-micropigmentacao/
 
 🛠 Tecnologias
 As seguintes ferramentas foram usadas na construção do projeto:
